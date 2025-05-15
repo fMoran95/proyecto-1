@@ -1,4 +1,15 @@
-/* RESET */
+:root {
+    --primary-color: #000000;
+    --base-color: #ffffff;
+    --hover-color: #eeeeee;
+    --text-color-1: #333333;
+    --article-color: #d9d9d9 ;
+    --font-family: 'Quicksand', sans-serif;
+    --font-family-playfair: 'Playfair Display', serif;
+    --font-family-sans: 'Inter', sans-serif;
+
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +17,7 @@
   }
   
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-family-sans);
   }
   
   /* HEADER */
@@ -15,7 +26,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem;
-    background-color: #eeeeee;
+    background-color: var(--hover-color);
     position: fixed;
     top: 0;
     left: 0;
@@ -23,8 +34,15 @@
     height: 60px;
     z-index: 1000;
   }
+
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
   
-  .header-left {
+  .nav-left {
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -39,18 +57,19 @@
     transform: scale(1.1);
   }
   
-  .nav-bar ul {
+  header ul {
     display: flex;
+    justify-content: space-between;
     gap: 2rem;
     list-style: none;
     margin: 0;
     padding: 0;
   }
   
-  .nav-bar a {
+   header ul a {
     display: flex;
     text-decoration: none;
-    color: black;
+    color: var(--primary-color);
     font-weight: 500;
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -58,42 +77,21 @@
     transition: scale 0.3s;
   }
 
-  .nav-bar a:hover {
+  header ul a:hover {
     transform: scale(1.1);
     font-weight: bolder;
   }
   
-  .nav-bar-2 {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-  
-  .nav-bar-2 ul {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-bar-2 img {
+  .nav-right img {
     width: 20px;
     height: 20px;
     object-fit: contain;
     transition: scale 0.3s;
   }
 
-  .nav-bar-2 img:hover {
+  .nav-right img:hover {
     transform: scale(1.5);
   }
-
-  .icon-group {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
   
   /* HAMBURGER BUTTON */
   .menu-toggle {
@@ -116,7 +114,7 @@
   }
   
   main {
-    padding-top: 60px; /* Espacio para el header fijo */
+    padding-top: 60px;
   }
   /* HERO SECTION */
   .hero {
@@ -133,12 +131,12 @@
     position: absolute;
     top: 2rem;
     left: 2rem;
-    color: white;
+    color: var(--base-color);
     text-align: left;
   }
   
   .hero h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-family-playfair);
     font-size: 2.5rem;
     font-weight: 400;
   }
@@ -153,12 +151,12 @@
     grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
     gap: 1.5rem;
     padding: 1.5rem;
-    background-color: white;
+    background-color: var(--base-color);
     justify-items: center; /* centra horizontalmente las tarjetas */
   }
   
-  .car-item {
-    background-color: #d9d9d9;
+  .cars article {
+    background-color: var(--article-color);
     border-radius: 10px;
     width: 100%;
     max-width: 500px;
@@ -170,7 +168,7 @@
     transition: scale 0.3s;
   }
 
-  .car-item:hover {
+  .cars article:hover {
     transform: scale(1.01);
   }
   
@@ -191,16 +189,16 @@
   padding: 0.25rem 1rem;
   border: none;
   border-radius: 20px;
-  background-color: white;
+  background-color: var(--base-color);
   font-size: 0.8rem;
   cursor: pointer;
   width: 100px;
   height: 40px;
   transition: transform 0.2s ease, background-color 0.2s ease;
   }
-  .car-item button:hover {
+  .cars article button:hover {
     transform: scale(1.05);
-    background-color: #eeeeee;
+    background-color: var(--hover-color);
 }
   
 .color-options {
@@ -225,7 +223,7 @@
     box-shadow: 0 0 0 1px black;
 }
 .car-item button {
-    background-color: white;
+    background-color: var(--base-color);
     border: 1px #ccc;
     border-radius: 20px;
     padding: 0.25rem 1rem;
@@ -257,7 +255,7 @@
   }
   
   .nearest-store {
-    background-color: white;
+    background-color: var(--base-color);
   }
   .nearest-store h2 {
     font-size: 2.5rem;
@@ -265,7 +263,7 @@
     margin-bottom: 1rem;
     text-align: left;
     margin-left: 15px;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-family-playfair);
     max-width: 18ch;
     line-height: 1.2;
   }
@@ -296,8 +294,8 @@
     justify-content: center;
     border-radius: 10px;
     z-index: 2;
-    color: white;
-    font-family: 'Quicksand', sans-serif;
+    color: var(--base-color);
+    font-family: var(--font-family);
     background-color: rgba(255, 255, 255, 0.333);
 }
 
@@ -305,13 +303,13 @@
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: white ;
+    color: var(--base-color) ;
 }
 .wrapper-map-text button {
     padding: 0.25rem 1rem;
   border: none;
   border-radius: 20px;
-  background-color: white;
+  background-color: var(--base-color);
   font-size: 0.55rem;
   cursor: pointer;
   width: 150px;
@@ -321,19 +319,19 @@
 }
 .wrapper-map-text button:hover {
     transform: scale(1.05);
-    background-color: #eeeeee;
+    background-color: var(--hover-color);
 }
 .slider-features {
     padding: 1.5rem;
     gap: 1.5rem;
-    background-color: white;
+    background-color: var(--base-color);
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columnas en desktop */
     gap: 2rem;
   }
   
   .feature-item {
-    background-color: #d9d9d9;
+    background-color: var(--article-color);
     border-radius: 10px;
     padding: 1rem;
     text-align: left;
@@ -360,14 +358,14 @@
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 20px;
-    background-color: white;
+    background-color: var(--base-color);
     font-size: 0.8rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
   }
   
   .feature-item button:hover {
-    background-color: #eeeeee;
+    background-color: var(--hover-color);
     transform: scale(1.05);
   }
   .red-temptation {
@@ -384,8 +382,8 @@
     position: absolute;
     bottom: 2rem;
     left: 5rem;
-    color: white;
-    font-family: Quicksand, sans-serif;
+    color: var(--base-color);
+    font-family: var(--font-family);
     max-width: 30ch;
     line-height: 1.4;
 }
@@ -399,7 +397,7 @@
     max-width: 35ch;
 }
 .mercedes-maywatch-wheel {
-  background-color: white;
+  background-color: var(--base-color);
   padding: 2rem;
 }
 
@@ -412,7 +410,7 @@
 
 .text-content {
   max-width: 500px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: var(--font-family);
 }
 
 .text-content h2 {
@@ -431,7 +429,7 @@
 
 .text-content button {
   padding: 0.5rem 1rem;
-  background-color: white;
+  background-color: var(--base-color);
   border: none;
   cursor: pointer;
   transition: transform 0.2s;
@@ -465,8 +463,8 @@
 .footer-background {
     background-color: #404243;
     padding: 2rem 0;
-    color: white;
-    font-family: 'Quicksand', sans-serif;
+    color: var(--base-color);
+    font-family: var(--font-family);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -475,12 +473,12 @@
   }
   .footer-background p {
     font-size: 0.9rem;
-    font-family: 'Quicksand', sans-serif;
+    font-family: var(--font-family);
     max-width: 65ch;
   }
  .footer-background button {
     padding: 0.5rem 1rem;
-    background-color: white;
+    background-color: var(--base-color);
     border: none;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -490,14 +488,14 @@
     transition: background-color 0.3s, transform 0.3s;
   }
   .footer-background button:hover {
-    background-color: #eeeeee;
+    background-color: var(--hover-color);
     transform: scale(1.05);
   }
 
   .footer-container {
-    background-color: black ;
+    background-color: var(--primary-color) ;
     padding-bottom:  2rem;
-    color: white;
+    color: var(--base-color);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -531,12 +529,12 @@
     height: 45px; 
     width: 100%;
     justify-content: space-between;
-    background-color: black;
+    background-color: var(--primary-color);
   }
   
   .email-wrapper input {
-    background-color: black;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--base-color);
     border: none;
     border-radius: 999px;
     text-align: center;
@@ -547,12 +545,11 @@
   .email-wrapper input:focus {
     outline: none;
     opacity: 1;
-    color: transparent;
-    caret-color: white;
+    caret-color: var(--base-color);
   }
   
   .email-wrapper input::placeholder {
-    color: white;
+    color: var(--base-color);
     text-align: center;
     opacity: 0.7;
   }
@@ -563,17 +560,17 @@
   
   .email-wrapper button {
     background-color: white;
-    color: black;
+    color: var(--primary-color);
     border-radius: 999px;
     border: none;
     padding: 0.75rem 1.5rem;
     font-size: 0.8rem;
     cursor: pointer;
-    width: 150px; /* o lo que necesites */
+    width: 150px;
     transition: background-color 0.3s, transform 0.3s;
   }
   .email-wrapper button:hover {
-    background-color: #eeeeee;
+    background-color: var(--hover-color);
     transform: scale(1.05);
   }
 
@@ -590,7 +587,7 @@
     width: 20px;
     height: 20px;
     appearance: none;
-    background-color: black;
+    background-color: var(--primary-color);
     border: 1px solid white;
     border-radius: 4px;
     cursor: pointer;
@@ -611,7 +608,7 @@
   }
 
   .newsletter-legal a {
-    color: white;
+    color: var(--base-color);
     opacity: 1;
     cursor: pointer;
     transition: font-weight 0.3s;
@@ -624,7 +621,7 @@
   }
   
   .newsletter-legal p {
-    color: white;
+    color: var(--base-color);
     opacity: 0.8;
     font-size: 0.8rem;
   }
@@ -648,8 +645,8 @@
     display: flex;
     gap: 1rem;
     justify-content: space-around;
-    background-color: black;
-    color: white;
+    background-color:var(--primary-color);
+    color: var(--base-color);
     padding: 2rem 0;
     padding-bottom: 10rem;
     padding-left: 2rem;
@@ -671,7 +668,7 @@
   }
   .footer-links a {
     text-decoration: none;
-    color: white;
+    color: var(--base-color);
     font-size: 0.8rem;
     transition: font-weight 0.3s;
     opacity: 0.7;
@@ -689,7 +686,7 @@
     bottom: 2rem;
     right: 2rem;
     background-color: #fefefe;
-    color: black;
+    color: var(--primary-color);
     border: none;
     text-decoration: none;
     text-align: center;
@@ -706,14 +703,14 @@
   }
   
   .scroll-top:hover {
-    background-color: #eeeeee;
+    background-color: var(--hover-color);
     transform: scale(1.1);
   }
   
 
   /* RESPONSIVE: Mobile */
   @media (max-width: 768px) {
-    .nav-bar {
+    .nav-left li {
       display: none;
     }
   
@@ -821,7 +818,7 @@
 .red-temptation {
     display: flex;
     flex-direction: column;
-    background-color: #eeeeee;
+    background-color: var(--hover-color);
   }
 .red-temptation img {
         width: 100%;
@@ -835,14 +832,15 @@
         max-width: 100%;
 }
 .red-text h2 {
-        font-size: 1.3rem ;
+        font-size: 1.5rem ;
         font-weight: 500;
         margin-bottom: 0.75rem;
 }
 .red-text p {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         line-height: 1;
         font-weight: 400;
+        text-align: left;
         margin: 0 auto;
     }
     .mercedes-maywatch-wheel {
